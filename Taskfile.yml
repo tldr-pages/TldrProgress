@@ -13,3 +13,22 @@ tasks:
     cmds:
       - yarn
       - yarn run build
+
+  update_go:
+    desc: Updates Go dependencies
+    cmds:
+      - go get -u ./...
+      - go mod tidy
+
+  update_yarn:
+    desc: Updates Yarn dependencies
+    dir: resources
+    cmds:
+      - yarn upgrade
+      - yarn audit
+
+  update:
+    desc: Updates all dependencies
+    cmds:
+      - task: update_go
+      - task: update_yarn
