@@ -32,3 +32,5 @@ tasks:
     cmds:
       - task: update_go
       - task: update_yarn
+      - git add go.mod go.sum resources/yarn.lock
+      - git commit -m "Updates Go & NPM dependencies"
